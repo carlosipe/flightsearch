@@ -1,0 +1,15 @@
+usage: make <command>
+
+== commands
+
+  console         Start an IRB session (alias: "c")
+  install         Create .env file, install dependencies and run migrations
+  test            Run all tests in tests folder (alias: "t")
+  update          Install dependencies, includes development dependencies
+  migrate         Run pending migrations
+  migrate_testing Run migrations for testing database
+  tdd             Run all tests with `watch -n0 ...`
+  
+  sequel -r ./app.rb -M 0 -m db/migrations/
+  sequel -r ./tests/helper.rb -M 0 -m db/migrations/
+

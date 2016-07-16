@@ -1,0 +1,3 @@
+requests -v 1.0.0
+sequel -v 4.36.0
+pg -v 0.18.4
