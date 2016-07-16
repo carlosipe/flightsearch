@@ -20,7 +20,7 @@ Dir["./routes/**/*.rb"].each  { |rb| require rb }
 Cuba.define do
   on root do
     render 'index',
-    quotes: Quote.eager(:outbound_leg_origin, :outbound_leg_destination).order_by(:min_price).all
+    quotes: Quote.eager(:outbound_leg_origin, :outbound_leg_destination).order_by(:min_price, :outbound_leg_departure_date).all
   end
 
   on 'places' do

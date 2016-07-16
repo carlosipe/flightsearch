@@ -8,7 +8,7 @@
       <tr>
         <td>{{ quote.origin_name }}</td>
         <td>{{ quote.destination_name }}</td>
-        <td>{{ quote.min_price.to_f }}</td>
+        <td>{{ "%.0f" % quote.min_price }} EUR</td>
         <td>{{ quote.outbound_leg_departure_date.strftime('%d/%m/%Y %H:%M') }} </td> 
       </tr>
     % end
