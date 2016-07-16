@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <tr>
+    % %w(id name iata_code type skyscanner_code city_name city_id country_name).each do |word|
+    <th> {{ word}} </th>
+    % end
+  </tr>
+    % places.each do |place|
+      <tr>
+        % %w(id name iata_code type skyscanner_code city_name city_id country_name).each do |field|
+          <td>{{ place.send(field.to_sym) }}</td>
+        % end
+      </tr>
+    % end
+</table>

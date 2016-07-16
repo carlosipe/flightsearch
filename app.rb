@@ -22,6 +22,10 @@ Cuba.define do
     render 'index',
     quotes: Quote.eager(:outbound_leg_origin, :outbound_leg_destination).order_by(:min_price).all
   end
+
+  on 'places' do
+    render 'places', places: Place.order_by(:country_name).all
+  end
 end
 
 # countries = %w(ES FR AR GR IT)
