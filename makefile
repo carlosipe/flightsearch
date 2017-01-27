@@ -15,11 +15,12 @@ console_test:
 help:
 	@cat ./docs/help
 
-install: init update migrate
+install: init migrate
 
 init:
 	@cp -n .env.example .env
 	@gem install dep
+	@dep install
 
 test:
 	ruby -W1 .gs/bin/cutest $(TESTS)
@@ -33,4 +34,4 @@ migrate_testing:
 tdd:
 	watch -n0 ruby -W1 .gs/bin/cutest $(TESTS)
 
-.PHONY: c t console test help install init update migrate migrate_testing console_test tdd
+.PHONY: c t console test help install init migrate migrate_testing console_test tdd
